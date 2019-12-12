@@ -9,14 +9,6 @@ class BookButton extends Component {
     bookUpdate: PropTypes.func.isRequired,
   };
 
-//  componentDidMount(){
-  //  this.setState({currentShelf: this.props.book.shelf})
-
-//  }
-  
-
-// getShelf = (bookId) => { }
-
     bookUpdate = (event) => {      
       this.props.bookUpdate(this.props.book, event.target.value)
       this.setState({currentShelf: event.target.value})
