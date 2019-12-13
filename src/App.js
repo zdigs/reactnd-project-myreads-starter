@@ -5,12 +5,8 @@ import './css/App.css';
 import Header from './components/Header';
 import SearchBooks from './components/SearchBooks';
 import BookShelf from './components/BookShelf';
-import PropTypes from 'prop-types';
 
 class App extends Component {
-static propTypes = {
-  books: PropTypes.array.isRequired  
-}
   state = { 
     books: [],
     shelfBooks: [],
@@ -65,15 +61,14 @@ const {bookUpdate, ...other} = this.props;
                 <br />
                 </div>
               ))}              }
-               <Link to="/add">
+               <Link to="/search">
                 <div className="open-search">                 
                 </div>
                 </Link>
             </div>
             )}/> 
-        </section> 
-       
-           <Route path="/add" render={() => (              
+        </section>        
+           <Route path="/search" render={() => (              
                 <SearchBooks                                     
                 bookUpdate={this.bookUpdate}                
                 {...other}

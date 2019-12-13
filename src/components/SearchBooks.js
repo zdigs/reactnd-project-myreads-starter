@@ -39,13 +39,6 @@ updateQuery(query) {
     }))
   })} 
 
-/*   searchBooks = (query) => {
-    BooksAPI.search(query)
-    .then(books => {this.setState({books})})
-    
-} */
-
-
   clearQuery = () => {
     this.updateQuery('')
   }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import BookButton from './BookButton';
 import PropTypes from 'prop-types';
 import * as BooksAPI from './BooksAPI';
+// import * as placeholder from '../images/bookholder.png';
 
 class BookCard extends Component {
 static propTypes = {
@@ -18,7 +19,8 @@ constructor(props){
       .then(book => this.setState({currentShelf: book.shelf}))
   }
   componentDidMount() {
-    this.setState({cover: this.props.book.imageLinks && this.props.book.imageLinks.thumbnail})    
+  this.setState({cover: this.props.book.imageLinks && this.props.book.imageLinks.thumbnail})
+
   }
 
 render(){
