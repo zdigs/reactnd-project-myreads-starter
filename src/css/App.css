@@ -45,20 +45,6 @@ span.close-search-link-text {
   padding-top: 30px;
 }
 
-/* #add-book {
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;  
-  background-image: url('../icons/add.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 28px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  font-size: 0;
-  outline: 0;
-} */
-
 .field.search-field {
   width: 100%;  
 }
@@ -89,7 +75,6 @@ span.close-search-link-text {
 .back-button {
   display: block;
   color: red;
-
 }
 
 .search-helper-text {
@@ -119,15 +104,16 @@ span.close-search-link-text {
   height: 220px;
   width: 290px;
   box-shadow: -2px 8px 16px 2px rgba(0,0,0,0.4), 0 3px 6px 12px rgba(0,0,0,0.23);
-  display: flex;
-  margin-top: 20px;
+  display: flex;    
 }
 
 div.card-image img {
   margin-top: 8px;
   margin-left: 10px;
-  width: 128px;
-  height: 192px;
+  width: 129px;
+  height: 193px;
+  min-width: 129px !important;
+  min-height: 193px !important;
   box-shadow: 0px 4px 12px 2px rgba(0,0,0,0.4);
   }
 
@@ -175,26 +161,33 @@ justify-content: space-between;
 }
 
 figure.title {
-  width: 160px;
-  min-width: 5%;  
+  min-width: 160px;
   margin-left: -20px;
   margin-top: -6px;
   height: fit-content;
   padding-bottom: 6px;
   padding-left: 12px;
-  margin-right: 8px;
+  margin-right: 25px;
   box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
   
 }
 
 .bookshelf {
   display: flex;
-  min-width: 90%;
-  flex-direction: row;
-  justify-content: flex-start;
-  box-sizing: content-box;
+  min-width: 90%;  
   background:white !important;
-  min-height: 260px;
+  min-height: 290px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+}
+
+#shelfcolumns {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+
 }
 
 .search-field {

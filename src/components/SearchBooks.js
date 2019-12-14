@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import BookCard from './BookCard';
 import { Link } from 'react-router-dom';
-import * as BooksAPI from './BooksAPI';
+import * as BooksAPI from '../utils/BooksAPI';
 import PropTypes from 'prop-types';
 
 class SearchBooks extends Component {
   static propTypes = {
-    resultBooks: PropTypes.array.isRequired,
+    resultBooks: PropTypes.array.isRequired
   };
 
 
@@ -17,8 +17,8 @@ class SearchBooks extends Component {
 state = {
 query: '',
 resultBooks: [],
-books:[]
-};
+books: [],
+}
 
 componentDidMount() {
   BooksAPI.getAll()
@@ -32,6 +32,7 @@ updateQuery(query) {
   this.setState(() => ({
     query
   }))
+  if (!query && !query.length) return;
   BooksAPI.search(query)
   .then((resultBooks) => {
     this.setState(() => ({
@@ -76,7 +77,7 @@ updateQuery(query) {
             </div>            
             </div>
             <div className="columns">
-            <div className="column is-full">
+            <div className="column is-full is-variable is-3">
               <h2 className="search-results-title title has-text-left"> Search Results </h2>                         
             </div>
             </div>                 

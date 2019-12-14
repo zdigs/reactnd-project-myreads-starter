@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Route, Link } from 'react-router-dom';
-import * as BooksAPI from './components/BooksAPI';
+import * as BooksAPI from './utils/BooksAPI';
 import './css/App.css';
 import Header from './components/Header';
 import SearchBooks from './components/SearchBooks';
@@ -40,7 +40,6 @@ const       shelves = [
   {name: 'wantToRead', title: 'Want to Read'},
   {name: 'read', title: 'Read'}
 ]
-const {bookUpdate, ...other} = this.props;
 
     return (
       <div className="App">      
@@ -50,17 +49,15 @@ const {bookUpdate, ...other} = this.props;
             exact path="/" render={() => (
             <div>
               {shelves.map(shelf => (
-              <div className="row">                                 
-              <BookShelf 
-                  key={shelf.name}
+              <div className="row" key={shelf.name}>                                 
+              <BookShelf                   
                   title={shelf.title}
                   books={this.getShelfBooks(shelf.name)}
                   bookUpdate={this.bookUpdate}
-                  {...other}
                 />
                 <br />
                 </div>
-              ))}              }
+              ))}              
                <Link to="/search">
                 <div className="open-search">                 
                 </div>
@@ -70,8 +67,7 @@ const {bookUpdate, ...other} = this.props;
         </section>        
            <Route path="/search" render={() => (              
                 <SearchBooks                                     
-                bookUpdate={this.bookUpdate}                
-                {...other}
+                bookUpdate={this.bookUpdate}
                  />
            )}/>
       </div>

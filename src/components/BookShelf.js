@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 class BookShelf extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
     bookUpdate: PropTypes.func.isRequired
    };
@@ -17,17 +16,15 @@ class BookShelf extends Component {
         <figure className="title has-background-warning is-bold">
              <h2 className="title is-inline is-size-6 has-text-danger">{this.props.title}</h2>
         </figure>       
-      <div className="columns is-multiline">
-        {books.map(book => (
-        <div className="column" key={book.id}>
+      <div className="columns is-multiline" id="shelfcolumns">
+        {books.map(book => (        
           <BookCard
             book={book}
             key={book.id}                        
             bookUpdate={bookUpdate}
             shelf={book.shelf}
             {...other}            
-          />
-          </div>         
+          />                  
         ))}
       </div>
       </div> 
