@@ -52,6 +52,7 @@ const       shelves = [
               <div className="row" key={shelf.name}>                                 
               <BookShelf                   
                   title={shelf.title}
+                  key={shelf.name}
                   books={this.getShelfBooks(shelf.name)}
                   bookUpdate={this.bookUpdate}
                 />
